@@ -23,7 +23,7 @@ const Navbar = () => {
               <Leaf className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-display font-bold text-foreground">
-              Agri<span className="text-primary">Smart</span>
+              Agri<span className="text-primary">Sense</span>
             </span>
           </Link>
 

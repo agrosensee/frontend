@@ -5,6 +5,7 @@ import BenefitsSection from "@/components/landing/BenefitsSection";
 import CommunitySection from "@/components/landing/CommunitySection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
+import SubscriptionSection from "@/components/landing/SubscriptionSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <BenefitsSection />
         <CommunitySection />
         <CTASection />
+        <SubscriptionSection />
       </main>
       <Footer />
     </div>

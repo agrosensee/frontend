@@ -1,0 +1,331 @@
+// components/SubscriptionSection.scss
+
+// Rənglər (screenshot-dan uyğun)
+$primary-green: #65C495;
+$dark-green: #2AB475;
+$light-blue: #2BB3B0;
+$orange: #FF9800;
+$text-dark: #1a1a1a;
+$text-muted: #6b7280;
+$border-color: #e5e7eb;
+$background-light: #f9fafb;
+
+.subscription-section {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, $background-light 100%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: $text-muted;
+    }
+  }
+
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .plan-card {
+    background: white;
+    border: 2px solid $border-color;
+    border-radius: 16px;
+    padding: 25px;
+    padding-bottom: 45px;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    &.popular {
+      border-color: $primary-green;
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.15);
+
+      .select-btn {
+        background: linear-gradient(135deg, $primary-green 0%, $dark-green 100%);
+      }
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, $primary-green 0%, $dark-green 100%);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 12px;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 16px;
+
+      .price {
+        font-size: 3rem;
+        font-weight: 700;
+        color: $primary-green;
+      }
+
+      .period {
+        font-size: 1rem;
+        color: $text-muted;
+      }
+    }
+
+    .plan-description {
+      color: $text-muted;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        color: $text-dark;
+
+        svg {
+          color: $primary-green;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .select-btn {
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, $light-blue 0%, #5A9FBC 100%);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      -o-border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      bottom: 20px;
+      width: 80%;
+      &:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.251);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .registration-form-wrapper {
+    background: white;
+    border: 2px solid $primary-green;
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.1);
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $text-dark;
+        margin-bottom: 8px;
+      }
+
+      .form-subtitle {
+        color: $text-muted;
+        margin-bottom: 32px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media (max-width: 640px) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 5px;
+
+        label {
+          display: block;
+          font-weight: 600;
+          color: $text-dark;
+          margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 8px 12px;
+          border: 2px solid $border-color;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-family: inherit;
+          transition: all 0.3s ease;
+          resize: vertical;
+          background: white;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-green;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+          }
+
+          &::placeholder {
+            color: lighten($text-muted, 10%);
+          }
+        }
+
+        select {
+          cursor: pointer;
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 16px center;
+          padding-right: 40px;
+        }
+
+        textarea {
+          min-height: 100px;
+        }
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px 24px;
+        background: linear-gradient(135deg, $primary-green 0%, $dark-green 100%);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        &:hover:not(:disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+}
+    }
+  }
+
+  .success-message {
+    background: white;
+    border: 2px solid $primary-green;
+    border-radius: 16px;
+    padding: 60px 40px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.1);
+
+    .success-content {
+      max-width: 500px;
+      margin: 0 auto;
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, $primary-green 0%, $dark-green 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin: 0 auto 24px;
+      }
+
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $text-dark;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: $text-muted;
+        line-height: 1.6;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-section {
+    padding: 60px 20px;
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .registration-form-wrapper {
+      padding: 24px;
+    }
+  }
+}
